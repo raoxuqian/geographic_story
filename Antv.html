@@ -46,6 +46,7 @@
                     texts.push({ name, lng, lat });
                     return '';
                 });
+		    console.log(texts);
                 textLayer = new L7.PointLayer({ zIndex: 2 })
                     .source(texts, {
                         parser: {
