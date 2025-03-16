@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map Example</title>
+  <!-- 引用本地的 AntV L7 -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+  <script src = 'https://unpkg.com/@antv/l7'></script>
+  <style>
+    #map {
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  
+  <script>
+  
+    mapboxgl.accessToken = 'pk.eyJ1IjoicmFveHVxaWFuIiwiYSI6ImNtMHRyNWd5aDA0cnMyanNnbzRjYmR3c3EifQ.kgDIBsf16Xc7ZMwX06pk-Q';
+    const scene = new L7.Scene({
+        id: 'map',
+        map: new L7.Mapbox({
+            token: mapboxgl.accessToken,
+            style: 'dark',
+            center: [120, 29.732983],
+            pitch: 40,
+            zoom: 4,
+        })
+    });
+
+    scene.on('loaded', () => {
+    	let lineDown,
+            lineUp,
+            textLayer;
+ 		fetch('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json')
+            .then(res => res.json())
+            .then(data => {
+                const texts = [];  
+                data.features.map(option => {
+                    const { name, center } = option.properties;
+                    const [ lng, lat ] = center || [];
+                    texts.push({ name, lng, lat });
+                    return '';
+                });
+                textLayer = new L7.PointLayer({ zIndex: 2 })
+                    .source(texts, {
+                        parser: {
+                            type: 'json',
+                            x: 'lng',
+                            y: 'lat'
+                        }
+                    })
+                    .shape('name', 'text')
+                    .size(14)
+                    .color('#0ff')
+                    .style({
+                        textAnchor: 'center', // 文本相对锚点的位置 center|left|right|top|bottom|top-left
+                        spacing: 1, // 字符间距
+                        padding: [ 1, 1 ], // 文本包围盒 padding [水平，垂直]，影响碰撞检测结果，避免相邻文本靠的太近
+                        stroke: '#0ff', // 描边颜色
+                        strokeWidth: 0.2, // 描边宽度
+                        raisingHeight: 300000,
+                        textAllowOverlap: true
+                    });
+                scene.addLayer(textLayer);
+
+				lineUp = new L7.LineLayer({ zIndex: 1 })
+                    .source(data)
+                    .shape('line')
+                    .color('#0DCCFF')
+                    .size(1)
+                    .style({
+                        raisingHeight: 300000
+                    });
+                scene.addLayer(lineUp);
+
+				const provincelayer = new L7.PolygonLayer({})
+                    .source(data)
+                    .size(300000)    // 切面高度
+                    .shape('extrude')
+                    .color('#0DCCFF')
+                    .active({
+                        color: 'rgb(100,230,255)'
+                    })
+                    .style({
+                        heightfixed: true,
+                        pickLight: true,
+                        raisingHeight: 0,  // 抬升高度，距离底图的高度
+                        opacity: 0.8
+                    });
+                scene.addLayer(provincelayer);
+
+                return '';
+ 			});
+
+        return '';
+    });   
+  </script>
+</body>
+</html>
