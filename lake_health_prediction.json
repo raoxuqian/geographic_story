@@ -1,0 +1,17 @@
+{
+  "title": "湖泊健康预测",
+  "years": ["2019", "2020", "2021", "2022", "2023", "2024", "2025"],
+  "riverHealth": [64, 63, 69, 73, 78, 82, 84],
+  "warningLine": 72,
+  "warningPoints": [
+    { "year": "2019", "value": 64, "warning": true },
+    { "year": "2020", "value": 63, "warning": true }
+  ],
+  "description": "武汉市湖泊健康状况预测数据，从2019年到2025年的健康指数变化趋势，以及低于72分的预警点",
+  "analysis": {
+    "trend": "逐年上升",
+    "turningPoint": "2021年",
+    "prediction": "预计到2025年，湖泊健康指数达到84分，明显高于预警线"
+  },
+  "updateTime": "2024-05-01"
+} 

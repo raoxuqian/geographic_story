@@ -1,0 +1,48 @@
+{
+  "title": "湖泊健康警告点数据",
+  "groups": [
+    {
+      "name": "group1",
+      "type": "水资源警告",
+      "color": "#4cfd47",
+      "points": [
+        { "Longitude": 114.392469, "Latitude": 30.560921, "Name": "东湖", "WarningType": "水资源警告", "Info": "水位降低20%" },
+        { "Longitude": 114.352308, "Latitude": 30.435906, "Name": "汤逊湖", "WarningType": "水资源警告", "Info": "水量不足" },
+        { "Longitude": 114.057412, "Latitude": 30.541495, "Name": "后官湖", "WarningType": "水资源警告", "Info": "水量减少" },
+        { "Longitude": 114.241627, "Latitude": 30.42852, "Name": "青菱湖", "WarningType": "水资源警告", "Info": "水资源紧缺" },
+        { "Longitude": 114.493821, "Latitude": 30.240162, "Name": "梁子湖", "WarningType": "水资源警告", "Info": "供水量下降" }
+      ]
+    },
+    {
+      "name": "group2",
+      "type": "水质警告",
+      "color": "#f56c6c",
+      "points": [
+        { "Longitude": 114.335886, "Latitude": 30.567354, "Name": "沙湖", "WarningType": "水质警告", "Info": "氮磷超标" },
+        { "Longitude": 114.227526, "Latitude": 30.54075, "Name": "墨水湖", "WarningType": "水质警告", "Info": "富营养化严重" },
+        { "Longitude": 114.186521, "Latitude": 30.551627, "Name": "龙阳湖", "WarningType": "水质警告", "Info": "溶解氧偏低" },
+        { "Longitude": 114.500859, "Latitude": 30.803395, "Name": "武湖", "WarningType": "水质警告", "Info": "水体浑浊" },
+        { "Longitude": 114.41100, "Latitude": 30.613903, "Name": "杨春湖", "WarningType": "水质警告", "Info": "重金属超标" }
+      ]
+    },
+    {
+      "name": "group3",
+      "type": "生态警告",
+      "color": "#ffeb3b",
+      "points": [
+        { "Longitude": 114.257337, "Latitude": 30.558066, "Name": "月湖", "WarningType": "生态警告", "Info": "蓝藻爆发" },
+        { "Longitude": 114.1885, "Latitude": 30.657993, "Name": "金银湖", "WarningType": "生态警告", "Info": "水生植物减少" },
+        { "Longitude": 114.287514, "Latitude": 30.73107, "Name": "后湖", "WarningType": "生态警告", "Info": "生物多样性下降" },
+        { "Longitude": 114.281952, "Latitude": 30.437588, "Name": "黄家湖", "WarningType": "生态警告", "Info": "外来物种入侵" },
+        { "Longitude": 114.362689, "Latitude": 30.490555, "Name": "南湖", "WarningType": "生态警告", "Info": "湿地面积缩减" }
+      ]
+    }
+  ],
+  "mapConfig": {
+    "center": [114.31, 30.52],
+    "zoom": 10,
+    "style": "dark"
+  },
+  "description": "武汉市湖泊健康警告点数据，包括水资源警告、水质警告和生态警告三种类型",
+  "updateTime": "2024-05-01"
+} 

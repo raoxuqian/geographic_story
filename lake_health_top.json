@@ -1,0 +1,62 @@
+{
+  "title": "湖泊健康TOP5和不健康TOP5",
+  "data": [
+    {
+      "name": "梁子湖",
+      "value": 65,
+      "label": { "position": "right" },
+      "type": "unhealthy"
+    },
+    {
+      "name": "东湖",
+      "value": -86,
+      "type": "healthy"
+    },
+    {
+      "name": "汤逊湖",
+      "value": 63,
+      "label": { "position": "right" },
+      "type": "unhealthy"
+    },
+    {
+      "name": "后官湖",
+      "value": -87,
+      "type": "healthy"
+    },
+    {
+      "name": "墨水湖",
+      "value": 59,
+      "label": { "position": "right" },
+      "type": "unhealthy"
+    },
+    {
+      "name": "沙湖",
+      "value": -90,
+      "type": "healthy"
+    },
+    {
+      "name": "龙阳湖",
+      "value": 57,
+      "label": { "position": "right" },
+      "type": "unhealthy"
+    },
+    {
+      "name": "武湖",
+      "value": -95,
+      "type": "healthy"
+    },
+    {
+      "name": "青菱湖",
+      "value": 51,
+      "label": { "position": "right" },
+      "type": "unhealthy"
+    },
+    {
+      "name": "月湖",
+      "value": -99,
+      "type": "healthy"
+    }
+  ],
+  "description": "武汉市湖泊健康状况排名，正值表示不健康指数（红色），负值表示健康指数（蓝色），数值的绝对值越大表示健康程度或不健康程度越高",
+  "updateTime": "2024-05-01"
+} 
